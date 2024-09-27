@@ -6,20 +6,20 @@ import List from '../components/List';
 
 
 const Category = () => {
-    const {data, loading} = useContext(DataContext);
-    const {category} = useParams()
+   const {data, loading} = useContext(DataContext);
+   const {category} = useParams();
 
-    if(loading){
-        return <h1 className='loading'>데이터 로드 중입니다.</h1>
-     }
+   if(loading){
+      return <h1 className='loading'>데이터 로드 중입니다.</h1>
+   }
 
-     const filteredData= data.filter((item)=> item.RCP_WAY2===category)
-    return (
-        <div>
+   const filteredData= data.filter((item)=> item.RCP_PAT2===category)
+   return (
+      <div>
          <Title title={category}/>
          <List data={filteredData}/>
-        </div>
-    );
+      </div>
+   );
 };
 
 export default Category;
